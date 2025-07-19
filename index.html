@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Budget Tracking Website</title>
+        <link rel="stylesheet" href="style.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    </head>
+<body>
+    <header>
+        <h1>Budget Tracker</h1>
+    </header>
+    <main>
+        <section class="add-budget-item">
+            <form id="budget-form">
+                <div class="form-group">
+                    <h2>Add New Budget Item</h2>
+                    <label for="description">Description</label>
+                    <input type="text" id="description" name="description" placeholder="Enter description" required />
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" name="amount" placeholder="Enter amount" required />
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" name="category" required>
+                        <option value="" disabled selected>Select category</option>
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" required />
+                </div>
+                <button type="submit" min="0.01">Add Item</button>
+            </form>
+        </section>
+        <section class="budget-list-section">
+            <h2>Budget Items</h2>
+            <table id="budget-list">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Budget items will be added here -->
+                </tbody>
+            </table>
+        </section>
+        <section class="summary-section">
+            <h2>Summary</h2>
+            <div class="summary-item">
+                <span>Total Income:</span>
+                <span id="total-income">₹0.00</span>
+            </div>
+            <div class="summary-item">
+                <span>Total Expenses:</span>
+                <span id="total-expenses">₹0.00</span>
+            </div>
+            <div class="summary-item balance">
+                <span>Balance:</span>
+                <span id="balance">₹0.00</span>
+            </div>
+        </section>
+
+        <section class="budget-setting-section">
+            <h2>Set Budget</h2>
+            <form id="budget-setting-form">
+            <div class="form-group">
+                <label for="budget-amount">Budget Amount</label>
+                <input type="number" id="budget-amount" name="budget-amount" placeholder="Enter budget amount" required />
+            </div>
+            <div class="form-group">
+                <label for="budget-period">Budget Period</label>
+                <select id="budget-period" name="budget-period" required>
+                    <option value="" disabled selected>Select period</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                </select>
+            </div>
+            <button type="submit">Set Budget</button>
+        </form>
+        <div id="budget-display" class="budget-display">
+            <!-- Budget info will be displayed here -->
+        </div>
+    </section>
+
+    <section class="budget-graph-section">
+        <h2>Expense Graph</h2>
+        <div class="graph-controls">
+            <label for="timeframe">View By:</label>
+            <select id="timeframe">
+                <option value="daily">Daily (Mon, Tue, ...)</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly" selected>Monthly</option>
+                <option value="yearly">Yearly</option>
+            </select>
+        </div>
+        <canvas id="expenseChart"></canvas>
+    </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js">
+    </script>
+    <script src="chart.js">
+    </script>
+</body>
+</html>
