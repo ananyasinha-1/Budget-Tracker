@@ -1,1 +1,3 @@
 # Budget-Tracker
+A simple and interactive **Budget Tracker** built using **HTML, CSS, and JavaScript**.  
+It helps users track income, expenses, and balance in real time.
