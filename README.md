@@ -8,3 +8,8 @@ It helps users track income, expenses, and balance in real time.
 - Automatic balance calculation
 - Delete transactions
 - User-friendly UI
+
+## 🛠️ Technologies Used
+- HTML  
+- CSS  
+- JavaScript (JS)
